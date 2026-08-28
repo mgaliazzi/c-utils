@@ -1,0 +1,20 @@
+# Build output
+build/
+build-*/
+cmake-build-*/
+
+# Object and binary artefacts
+*.o
+*.obj
+*.a
+*.lib
+*.exe
+*.pdb
+*.ilk
+
+# Tooling
+compile_commands.json
+CMakeUserPresets.json
+.cache/
+.vscode/
+.idea/
