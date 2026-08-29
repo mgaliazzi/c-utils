@@ -1,0 +1,60 @@
+name: New component proposal
+description: Suggest something that could become its own component.
+labels: ["new component"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A component here has to earn its place twice: it has to be useful, and
+        it has to survive the constraints. Please answer the last two questions
+        honestly — a proposal that admits an existing library does it better is
+        far more useful than one that does not.
+
+  - type: input
+    id: name
+    attributes:
+      label: What would it be called
+      placeholder: ringbuf, debounce, crc
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does it solve
+      description: Concretely, from the point of view of someone writing firmware.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Can it live inside the rules
+      description: >
+        Two files, C99, no allocation, no HAL, no other component, no build
+        tooling, caller-supplied storage, multiple instances. If some part
+        cannot, say which — that is the most important thing in this form.
+    validations:
+      required: true
+
+  - type: textarea
+    id: prior_art
+    attributes:
+      label: What already exists
+      description: >
+        Name the libraries that already do this and what they do well. If one
+        of them is simply better, say so; the answer may be to point at it from
+        the README instead of writing another.
+    validations:
+      required: true
+
+  - type: textarea
+    id: difference
+    attributes:
+      label: What this would do differently
+      description: >
+        "Same algorithm, better packaged and documented" is a legitimate
+        answer — it is the reason the existing components exist. Vague novelty
+        is not.
+    validations:
+      required: true

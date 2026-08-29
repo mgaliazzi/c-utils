@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/OWNER/c-utils/security/advisories/new
+    about: Report memory-safety or undefined-behaviour issues privately, not here.
+  - name: Question about using a component
+    url: https://github.com/OWNER/c-utils/discussions
+    about: Tuning, integration and "how do I" questions. Each component README covers the contract and the common traps first.

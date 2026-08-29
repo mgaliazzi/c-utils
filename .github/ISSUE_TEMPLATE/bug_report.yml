@@ -1,0 +1,74 @@
+name: Bug report
+description: Something behaves differently from what the README says.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For anything memory-safety related, please use
+        **Security → Report a vulnerability** instead of this form.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - fsm
+        - pid
+        - kalman
+        - build / CMake
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: If the README states it, quoting the line helps a lot.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Smallest code that shows it
+      description: >
+        Ideally a `main.c` that compiles against the two component files alone.
+        That rules out the build system and makes it reproducible anywhere.
+      render: c
+    validations:
+      required: true
+
+  - type: input
+    id: toolchain
+    attributes:
+      label: Compiler and platform
+      placeholder: gcc 13.2, Linux x86-64 / arm-none-eabi-gcc 12.3, Cortex-M4
+    validations:
+      required: true
+
+  - type: input
+    id: build_flags
+    attributes:
+      label: Relevant build settings
+      description: >
+        Anything non-default - MJG_KALMAN_MAX_STATES, MJG_PID_USE_DOUBLE,
+        optimisation level, whether the FPU is enabled.
+      placeholder: -O2, MJG_PID_USE_DOUBLE, hardware FPU
+
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: The integration model is copying files, so please say which commit you copied.
+      placeholder: commit SHA
+    validations:
+      required: true
