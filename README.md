@@ -10,6 +10,7 @@ rather than installed.
 |---|---|
 | [`fsm`](fsm/) | Table-driven state machine with polled conditions. No event queue, no allocation. |
 | [`pid`](pid/) | PID controller with anti-windup, a filtered derivative and output limits. |
+| [`kalman`](kalman/) | Linear Kalman filter for a scalar measurement. Joseph form, outlier gating, no matrix inverse. |
 
 ## The independence rule
 

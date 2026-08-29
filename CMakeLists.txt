@@ -8,6 +8,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 
 option(CUTILS_BUILD_FSM      "Build the state machine component" ON)
 option(CUTILS_BUILD_PID      "Build the PID controller component" ON)
+option(CUTILS_BUILD_KALMAN   "Build the Kalman filter component"  ON)
 option(CUTILS_BUILD_TESTS    "Build component tests"             ON)
 option(CUTILS_BUILD_EXAMPLES "Build component examples"          ON)
 option(CUTILS_WERROR         "Treat warnings as errors"          OFF)
@@ -38,4 +39,8 @@ endif()
 
 if(CUTILS_BUILD_PID)
     add_subdirectory(pid)
+endif()
+
+if(CUTILS_BUILD_KALMAN)
+    add_subdirectory(kalman)
 endif()
