@@ -9,6 +9,7 @@ rather than installed.
 | | |
 |---|---|
 | [`fsm`](fsm/) | Table-driven state machine with polled conditions. No event queue, no allocation. |
+| [`pid`](pid/) | PID controller with anti-windup, a filtered derivative and output limits. |
 
 ## The independence rule
 
